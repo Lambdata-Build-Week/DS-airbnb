@@ -18,6 +18,9 @@ plotly = "*"
 sqlalchemy = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 psycopg2-binary = "*"
+jinja2 = "*"
+python-multipart = "*"
+aiofiles = "*"
 
 [requires]
 python_version = "3"

@@ -26,7 +26,7 @@ router = APIRouter()
 from . import db_crud, db_models, db_schemas
 
 @router.get('/info')
-async def get_url():
+async def get_db_url():
     """Verify we can connect to the database, 
     and return the database URL in this format:
     dialect://user:password@host/dbname
