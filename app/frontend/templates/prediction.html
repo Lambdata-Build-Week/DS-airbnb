@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>AIRBNB Listing Price Recommendation</title>
+		<title>AIRBNB Listing Price Recommender</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,16 +19,20 @@
 
                 <!-- Header -->
 					<header id="header">
-						<a href="/" class="logo"><strong>AIRBNB</strong> <span>Listing Price Recommendation</span></a>
+						<a href="/" class="logo"><strong>AIRBNB</strong> <span>Listing Price Recommender</span></a>
 						<nav>
-                            <a href="/prediction" class="button small">Prediction</a>
-							<a href="#menu">Menu</a>
+                            <ul class="actions">
+								<li><a href="/prediction" class="button">Prediction</a></li>
+								<li><a href="/visualizations" class="button">Graph</a></li>
+                                <li></li>
+							</ul>
+							<!-- <a href="#menu">Menu</a> -->
                             
 						</nav>
 					</header>
 
 				<!-- Menu -->
-					<nav id="menu">
+					<!-- <nav id="menu">
 						<ul class="links">
                             <li><a href="/">Home</a></li>
 							<li><a href="/prediction">Prediction</a></li>
@@ -38,65 +42,90 @@
 							<li><a href="#" class="button primary fit">Get Started</a></li>
 							<li><a href="#" class="button fit">Log In</a></li>
 						</ul>
-					</nav>
+					</nav> -->
                 
                 <!-- Main -->
 					<div id="main" class="alt">
                         <section id="one">
                             <div class="inner">
                                 <div class="row gtr-200">
-                                    <div class="col-6 col-12-medium">
-                                        <form method="post" action="#">
+                                    <div class="col-6 col-12-medium"> 
+                                        <form action="/prediction" method="POST">                                                                
                                             <div class="row gtr-uniform">
                                                 <div class="col-12">
                                                     <label for="message">City</label>
-                                                    <select name="demo-category" id="demo-category">
+                                                    <select name="city" id="city">
                                                         <option value="">- City by name -</option>
-                                                        <option value="1">Manufacturing</option>
-                                                        <option value="1">Shipping</option>
-                                                        <option value="1">Administration</option>
-                                                        <option value="1">Human Resources</option>
+                                                        <option value="Austin">Austin</option>
+                                                        <option value="Chicago">Chicago</option>
+                                                        <option value="Columbus">Columbus</option>
+                                                        <option value="Los Angeles">Los Angeles</option>
+                                                        <option value="New York City">New York City</option>
+                                                        <option value="San Diego">San Diego</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of beds</label>
-                                                    <input type="text" name="number-bed" id="number-bed" value="" placeholder="Number of beds" />
+                                                    <input type="text" name="number_bed" id="number_bed" value="" placeholder="Number of beds" />
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bedrooms</label>
-                                                    <input type="text" name="number-bedroom" id="number-bedroom" value="" placeholder="Number of bedroom" />
+                                                    <input type="text" name="number_bedroom" id="number_bedroom" value="" placeholder="Number of bedrooms" />
+                                                </div>
+                                                <div class="col-6 col-12-xsmall">
+                                                    <label for="message">Number of bathrooms</label>
+                                                    <input type="text" name="number_bathrooms" id="number_bathrooms" value="" placeholder="Number of bathrooms" />
+                                                </div>
+                                                <div class="col-6 col-12-xsmall">
+                                                    <label for="message">Accomodates</label>
+                                                    <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of persons" />
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="message">Property type</label>
+                                                    <select name="property_type" id="property_type">
+                                                        <option value="">- Property Type -</option>
+                                                        <option value="Apartment">Apartment</option>
+                                                        <option value="Aparthotel">Aparthotel</option>
+                                                        <option value="Bed and breakfast">Bed and breakfast</option>
+                                                        <option value="Botique hotel">Botique hotel</option>
+                                                        <option value="Boat">Boat</option>
+                                                        <option value="Bungalow">Bungalow</option>
+                                                        <option value="Cabin">Cabin</option>
+                                                        <option value="Camper/RV">Camper/RV</option>
+                                                        <option value="Condominium">Condominium</option>
+                                                        <option value="Cottage">Cottage</option>
+                                                        <option value="Guest suite">Guest suite</option>
+                                                        <option value="Guesthouse">Guesthouse</option>
+                                                        <option value="House">House</option>   
+                                                        <option value="Hotel">Hotel</option>                                               
+                                                        <option value="Hostel">Hostel</option>
+                                                        <option value="Loft">Loft</option>
+                                                        <option value="Resort">Resort</option>                                                        
+                                                        <option value="Serviced apartment">Serviced apartment</option>
+                                                        <option value="Tiny house">Tiny house</option>
+                                                        <option value="Townhouse1">Townhouse</option>   
+                                                        <option value="Villa">Villa</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="message">Room type</label>
+                                                    <select name="city" id="city">
+                                                        <option value="">- Room type -</option>
+                                                        <option>Entire home/apt</option>
+                                                        <option>Private room</option>
+                                                        <option>Shared room</option>
+                                                        <option>Hotel room</option>
+                                                    </select>
                                                 </div>
                                             </div> 
                                         </form>
                                     </div>
                                     <div class="col-6 col-12-medium">
-                                        <form method="post" action="#">
-                                            <div class="row gtr-uniform">
-                                                <div class="col-12">
-                                                    <label for="message">Property type</label>
-                                                    <select name="demo-category" id="demo-category">
-                                                        <option value="">- Property Type -</option>
-                                                        <option value="1">Manufacturing</option>
-                                                        <option value="1">Shipping</option>
-                                                        <option value="1">Administration</option>
-                                                        <option value="1">Human Resources</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-6 col-12-xsmall">
-                                                    <label for="message">Number of bathrooms</label>
-                                                    <input type="text" name="number-bathrooms" id="number-bathrooms value="" placeholder="Number of beds" />
-                                                </div>
-                                                <div class="col-6 col-12-xsmall">
-                                                    <label for="message">Accomodates</label>
-                                                    <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of bedroom" />
-                                                </div>
-                                            </div> 
-                                        </form>
+                                        <h3>YOUR RECOMMENDATED LISTING PRICE</h3>
                                     </div>
                                 </div>
-                                <div>
-                                    <h2>YOUR RECOMMENDATED LISTING PRICE</h2>
-                                </div>
+     
                             </div>  
                         </section>     
                     </div>              
