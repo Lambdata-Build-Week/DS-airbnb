@@ -21,6 +21,7 @@ psycopg2-binary = "*"
 jinja2 = "*"
 python-multipart = "*"
 aiofiles = "*"
+joblib = "*"
 
 [requires]
 python_version = "3"
