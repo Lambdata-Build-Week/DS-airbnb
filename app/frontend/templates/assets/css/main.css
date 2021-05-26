@@ -2831,7 +2831,8 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #6fc3df;
+				/* background-color: #6fc3df; */
+				background-image: url("images/cannal.jpg");
 			}
 
 			.tiles article:nth-child(6n - 4):before {
