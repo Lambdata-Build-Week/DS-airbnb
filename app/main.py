@@ -32,7 +32,11 @@ app.mount("/images",
           name="images"
           )
 
-
+app.mount("/model.joblib",
+          StaticFiles(directory="app/ml_viz/"),
+          name="model.joblib"
+          )
+          
 # Connect to the routing utilized in the other files of the app
 app.include_router(routes.router, tags=['Frontend'])  # for routing user inputs
 app.include_router(db.router, tags=['Database'])  # interactions with database

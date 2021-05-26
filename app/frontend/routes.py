@@ -13,25 +13,25 @@ def display_index(request: Request):
 
 
 # Route to display the prediction page
-@router.get('/prediction', response_class=HTMLResponse)
-def display_index(request: Request):
-    return templates.TemplateResponse('prediction.html', {"request": request})
+# @router.get('/prediction', response_class=HTMLResponse)
+# def display_index(request: Request):
+#     return templates.TemplateResponse('prediction.html', {"request": request})
 
-async def echo(city: str = Form(...),
-               number_bed: int = Form(...),
-               number_bedroom: int = Form(...),
-               property_type: str = Form(...),
-               number_bathrooms: int = Form(...),
-               accomodates: int = Form(...)
-               ):
+# async def echo(city: str = Form(...),
+#                number_bed: int = Form(...),
+#                number_bedroom: int = Form(...),
+#                property_type: str = Form(...),
+#                number_bathrooms: int = Form(...),
+#                accomodates: int = Form(...)
+#                ):
     
-    return {'city': city,
-            'number_bed': number_bed,
-            'number_bedroom': number_bedroom,
-            'property_type': property_type,
-            'number_bathrooms': number_bathrooms,
-            'accomodates': accomodates
-            }
+#     return {'city': city,
+#             'number_bed': number_bed,
+#             'number_bedroom': number_bedroom,
+#             'property_type': property_type,
+#             'number_bathrooms': number_bathrooms,
+#             'accomodates': accomodates
+#             }
 
 
 @router.get('/visualizations', response_class=HTMLResponse)
