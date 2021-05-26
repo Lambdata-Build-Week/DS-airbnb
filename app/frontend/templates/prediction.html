@@ -48,6 +48,7 @@
 					<div id="main" class="alt">
                         <section id="one">
                             <div class="inner">
+
                                 <div class="row gtr-200">
                                     <div class="col-6 col-12-medium"> 
                                         <form action="/prediction" method="POST">                                                                
@@ -66,19 +67,35 @@
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of beds</label>
-                                                    <input type="text" name="number_bed" id="number_bed" value="" placeholder="Number of beds" />
+                                                    <!-- <input type="text" name="number_bed" id="number_bed" value="" placeholder="Number of beds" /> -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="19" value="1" class="slider" id="beds">
+                                                        <p>Beds: <span id="display1"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bedrooms</label>
-                                                    <input type="text" name="number_bedroom" id="number_bedroom" value="" placeholder="Number of bedrooms" />
+                                                    <!-- <input type="text" name="number_bedroom" id="number_bedroom" value="" placeholder="Number of bedrooms" /> -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="9" value="1" class="slider" id="bedrooms">
+                                                        <p>Bedrooms: <span id="display2"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bathrooms</label>
-                                                    <input type="text" name="number_bathrooms" id="number_bathrooms" value="" placeholder="Number of bathrooms" />
+                                                    <!-- <input type="text" name="number_bathrooms" id="number_bathrooms" value="" placeholder="Number of bathrooms" /> -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="9" value="1" class="slider" id="bathrooms">
+                                                        <p>Bathrooms: <span id="display3"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Accomodates</label>
-                                                    <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of persons" />
+                                                    <!-- <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of persons" / -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="19" value="1" class="slider" id="accomodates">
+                                                        <p>Accomodates: <span id="display4"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="message">Property type</label>
@@ -138,5 +155,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script src="assets/js/slider.js"></script>
 
     </body>
