@@ -24,6 +24,7 @@
                             <ul class="actions">
 								<li><a href="/prediction" class="button">Prediction</a></li>
 								<li><a href="/visualizations" class="button">Graph</a></li>
+                                <li></li>
 							</ul>
 							<!-- <a href="#menu">Menu</a> -->
                             
@@ -48,8 +49,8 @@
                         <section id="one">
                             <div class="inner">
                                 <div class="row gtr-200">
-                                    <div class="col-6 col-12-medium">
-                                        <form action="/prediction" method="GET">
+                                    <div class="col-6 col-12-medium"> 
+                                        <form action="/prediction" method="POST">                                                                
                                             <div class="row gtr-uniform">
                                                 <div class="col-12">
                                                     <label for="message">City</label>
@@ -75,12 +76,10 @@
                                                     <label for="message">Number of bathrooms</label>
                                                     <input type="text" name="number_bathrooms" id="number_bathrooms" value="" placeholder="Number of bathrooms" />
                                                 </div>
-                                            </div> 
-                                        </form>
-                                    </div>
-                                    <div class="col-6 col-12-medium">
-                                        <form action="#" method="GET">
-                                            <div class="row gtr-uniform">
+                                                <div class="col-6 col-12-xsmall">
+                                                    <label for="message">Accomodates</label>
+                                                    <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of persons" />
+                                                </div>
                                                 <div class="col-12">
                                                     <label for="message">Property type</label>
                                                     <select name="property_type" id="property_type">
@@ -106,29 +105,27 @@
                                                         <option value="Tiny house">Tiny house</option>
                                                         <option value="Townhouse1">Townhouse</option>   
                                                         <option value="Villa">Villa</option>
+                                                        <option value="Other">Other</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="message">Room type</label>
                                                     <select name="city" id="city">
                                                         <option value="">- Room type -</option>
-                                                        <option value="Entire">Entire home/apt</option>
-                                                        <option value="Private">Private room</option>
-                                                        <option value="Shared">Shared room</option>
-                                                        <option value="Hotel">Hotel room</option>
+                                                        <option>Entire home/apt</option>
+                                                        <option>Private room</option>
+                                                        <option>Shared room</option>
+                                                        <option>Hotel room</option>
                                                     </select>
-                                                </div>
-                                                <div class="col-6 col-12-xsmall">
-                                                    <label for="message">Accomodates</label>
-                                                    <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of persons" />
                                                 </div>
                                             </div> 
                                         </form>
                                     </div>
+                                    <div class="col-6 col-12-medium">
+                                        <h3>YOUR RECOMMENDATED LISTING PRICE</h3>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h2>YOUR RECOMMENDATED LISTING PRICE:</h2>
-                                </div>
+     
                             </div>  
                         </section>     
                     </div>              
