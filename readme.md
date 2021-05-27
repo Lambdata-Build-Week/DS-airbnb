@@ -1,4 +1,4 @@
-# AIRBNB RECOMMENDER - A tool that recommend listing price
+# AIRBNB RECOMMENDER - A tool that recommends listing price
 
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Build-Week-ft-airbnb-2/DS)
@@ -14,24 +14,19 @@ AirBnB Price Recommender is an `<APP>` that allows `<AirBnb host>` to quickly ge
 [AirBnb Recommneder Website](https://airbnb-ds-predict.herokuapp.com/)
 
 [Write about the project] 
-This web app is built on Fast API.... This app using Mahcine Learning to give prediction ....
+This web app is built on Fast API.... This app uses Mahcine Learning to give a prediction ....
 
 ## Duplicate the project
 You can clone this project and try yourself.
 
 Clone the repo
 ```
-git clone https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO-NAME.git
+git clone https://github.com/Build-Week-ft-airbnb-2/DS
 
 cd YOUR-REPO-NAME
 ```
 
-You can use either Docker to rebuild this project using Dockerfile 
-```
-Brody do you want to add this phase?
-```
-
-Or using pipenv using Pipfile 
+You can use either pipenv using Pipfile 
 ```
 pipenv install --dev
 ```
@@ -49,6 +44,41 @@ uvicorn app.main:app --reload
 Go to `localhost:8000` in your browser.
 
 ![image](https://user-images.githubusercontent.com/7278219/87965040-c18ba300-ca80-11ea-894f-d51a69d52f8a.png)
+
+Or Docker to rebuild this project using Dockerfile 
+
+### Docker/Heroku steps:
+```
+docker build -t airbnb .
+docker tag airbnb registry.heroku.com/airbnb-ds-predict/web
+docker tag airbnb registry.heroku.com/airbnb-ds-predict/worker
+docker push registry.heroku.com/airbnb-ds-predict/web
+docker push registry.heroku.com/airbnb-ds-predict/worker
+heroku container:release web -a <Name of your heroku app>
+heroku container:release worker -a <Name of your heroku app>
+```
+
+# Foobar
+
+Foobar is a Python library for dealing with word pluralization.
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+
+```bash
+pip install foobar
+```
+
+## Usage
+
+```python
+import foobar
+
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
 
 
 ## Contributing to Airbnb Recommender
@@ -72,3 +102,6 @@ Thanks to the following people who have contributed to this project:
 * [@Minh Nguyen](https://github.com/minh14496) :high_brightness:
 * [@Jack Stanley](https://github.com/Jack4589) ⌨
 * [@Dennis Smith](https://github.com/domoreburpees) 😙
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

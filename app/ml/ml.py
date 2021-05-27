@@ -96,14 +96,15 @@ def echo(
 
     return templates.TemplateResponse('prediction.html',
                                       {"request": request,
-                                       "prediction": prediction,  # modiy?
-                                       "property_type": property_type,
+                                       "prediction": prediction,
+                                       "property_type": \
+                                       f'Property type: {property_type}',
                                        "room_type": f'Room type: {room_type}',
                                        "accommodates": \
-                                       f'Accommodate: {accommodates}',
-                                       "bathrooms": f'Bathroom: {bathrooms}',
-                                       "bedrooms": f'Bedroom: {bedrooms}',
-                                       "beds": f'Bed: {beds}',
+                                       f'Accommodates: {accommodates}',
+                                       "bathrooms": f'Bathrooms: {bathrooms}',
+                                       "bedrooms": f'Bedrooms: {bedrooms}',
+                                       "beds": f'Beds: {beds}',
                                        "city": f'City: {city}'
                                        })
 
