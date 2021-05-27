@@ -1,12 +1,25 @@
+Docker/Heroku steps:
+```
+docker build -t airbnb .
+docker tag airbnb registry.heroku.com/airbnb-ds-predict/web
+docker tag airbnb registry.heroku.com/airbnb-ds-predict/worker
+docker push registry.heroku.com/airbnb-ds-predict/web
+docker push registry.heroku.com/airbnb-ds-predict/worker
+heroku container:release web -a <Name of your heroku app>
+heroku container:release worker -a <Name of your heroku app>
+```
+
+
 # DS Build Week scaffold
 
-- [Big picture](#big-picture)
-- [Tech stack](#tech-stack)
-- [Getting started](#getting-started)
-- [File structure](#file-structure)
-- [More instructions](#more-instructions)
-- [Deploying to Heroku](#deploying-to-heroku)
-- [Example: Machine learning](#example-machine-learning)
+- [DS Build Week scaffold](#ds-build-week-scaffold)
+  - [Big picture](#big-picture)
+  - [Tech stack](#tech-stack)
+  - [Getting started](#getting-started)
+  - [File structure](#file-structure)
+  - [More instructions](#more-instructions)
+  - [Deploying to Heroku](#deploying-to-heroku)
+  - [Example: Machine learning](#example-machine-learning)
 
 ## Big picture
 

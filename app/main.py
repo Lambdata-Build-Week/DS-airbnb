@@ -1,19 +1,13 @@
 """Primary file for the creation and running of this Airbnb pricing web app."""
 
-# For creating and running our web app with FastAPI
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 import uvicorn
-
-# For routing between front end, back end, and databse
-from app.database import db
-from app.ml_viz import ml, viz
-# from app.frontend import routes
-
-from fastapi import Request, Form
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+
+from app.ml_viz import ml, viz
 
 
 # Instantiate fastAPI with appropriate descriptors
@@ -23,34 +17,35 @@ app = FastAPI(
     version="1.0",
     docs_url='/docs'
 )
+# Instantiate templates path
 templates = Jinja2Templates(directory="app/frontend/templates/")
+
 
 @app.get('/', response_class=HTMLResponse)
 def display_index(request: Request):
+    """Displays index.html from frontend/templates when user loads root URL"""
     return templates.TemplateResponse('index.html', {"request": request})
 
 
-# Create access to static files on the page
+# Mounts static files to specific routes for easier reference
 app.mount("/assets",
-          StaticFiles(directory="app/frontend/templates/assets"),
-          name="assets"
-          )
-
+            StaticFiles(directory="app/frontend/templates/assets"),
+            name="assets"
+            )
 app.mount("/images",
-          StaticFiles(directory="app/frontend/templates/images"),
-          name="images"
-          )
-
+            StaticFiles(directory="app/frontend/templates/images"),
+            name="images"
+            )
 app.mount("/model.joblib",
-          StaticFiles(directory="app/ml_viz/"),
-          name="model.joblib"
-          )
-          
+            StaticFiles(directory="app/ml_viz/"),
+            name="model.joblib"
+            )
+
 # Connect to the routing utilized in the other files of the app
-# app.include_router(routes.router, tags=['Frontend'])  # for routing user inputs
-app.include_router(db.router, tags=['Database'])  # interactions with database
-app.include_router(ml.router, tags=['Machine Learning'])  # predictive model
-app.include_router(viz.router, tags=['Visualization'])  # interactive content
+# predictive model
+app.include_router(ml.router, tags=['Machine Learning'])
+# interactive content
+app.include_router(viz.router, tags=['Visualization'])
 
 
 # Allow access between the front end and back end from different origins
@@ -62,6 +57,6 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
-
+# Run `uvicorn app.main:app` to start ASGI server
 if __name__ == '__main__':
     uvicorn.run(app)
