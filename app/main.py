@@ -7,7 +7,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from app.ml_viz import ml, viz
+from app.ml import ml
 
 
 # Instantiate fastAPI with appropriate descriptors
@@ -26,6 +26,10 @@ def display_index(request: Request):
     """Displays index.html from frontend/templates when user loads root URL"""
     return templates.TemplateResponse('index.html', {"request": request})
 
+@app.get('/about')
+def display_about(request: Request):
+    return templates.TemplateResponse('about.html', {"request": request})
+
 
 # Mounts static files to specific routes for easier reference
 app.mount("/assets",
@@ -37,15 +41,13 @@ app.mount("/images",
             name="images"
             )
 app.mount("/model.joblib",
-            StaticFiles(directory="app/ml_viz/"),
+            StaticFiles(directory="app/ml/"),
             name="model.joblib"
             )
 
 # Connect to the routing utilized in the other files of the app
 # predictive model
 app.include_router(ml.router, tags=['Machine Learning'])
-# interactive content
-app.include_router(viz.router, tags=['Visualization'])
 
 
 # Allow access between the front end and back end from different origins
