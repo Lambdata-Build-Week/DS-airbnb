@@ -20,36 +20,43 @@ model = joblib.load("app/ml_viz/model.joblib")
 # class Dict(BaseModel):
 #     """Use this data model to parse the request body JSON."""
 
-#     # x1: float = Field(..., example=3.14)
-#     # x2: int = Field(..., example=-42)
-#     # x3: str = Field(..., example='banjo')
-#     city: str=Form(...),
-#     beds: int=Form(...),
-#     bedrooms: int=Form(...),
-#     bathrooms: int=Form(...),
-#     accommodates: int=Form(...),
-#     property_type: str=Form(...),
-#     room_type: str=Form(...)
+    # x1: float = Field(..., example=3.14)
+    # x2: int = Field(..., example=-42)
+    # x3: str = Field(..., example='banjo')
+    # city: str=Field(...),
+    # beds: int=Field(...),
+    # bedrooms: int=Field(...),
+    # bathrooms: int=Field(...),
+    # accommodates: int=Field(...),
+    # property_type: str=Field(...),
+    # room_type: str=Field(...)
 
-#     def to_df(self):
-#         """Convert pydantic object to pandas dataframe with 1 row."""
-#         return pd.DataFrame([dict(self)])
+    # def to_df(self):
+    #     """Convert pydantic object to pandas dataframe with 1 row."""
+    #     return pd.DataFrame(columns=["property_type", "room_type", "accommodates", "bathrooms", "bedrooms", "beds", "city"],
+    #     data=[[self.property_type, self.room_type, self.accommodates, self.bathrooms, self.bedrooms, self.beds, self.city]])
 
-#     @validator('x1')
-#     def x1_must_be_positive(cls, value):
-#         """Validate that x1 is a positive number."""
-#         assert value > 0, f'x1 == {value}, must be > 0'
-#         return value
+    # @validator('x1')
+    # def x1_must_be_positive(cls, value):
+    #     """Validate that x1 is a positive number."""
+    #     assert value > 0, f'x1 == {value}, must be > 0'
+    #     return value
 
+    # def predict(property_type, room_type, accommodates, bathrooms, bedrooms, beds, city):
+    #     df = pd.DataFrame(columns=["property_type", "room_type", "accommodates", "bathrooms", "bedrooms", "beds", "city"],
+    #     data=[[property_type, room_type, accommodates, bathrooms, bedrooms, beds, city]])
+    #     y_pred = model.predict(df)[0][0]
+    #     result = np.exp(y_pred)
+    #     return np.round(result, 2)
 
 def predict(property_type, room_type, accommodates, bathrooms, bedrooms, beds, city):
-    df = pd.DataFrame(columns=["property_type", "room_type", "accommodates", "bathrooms", "bedrooms", "beds", "city"],
-    data=[[property_type, room_type, accommodates, bathrooms, bedrooms, beds, city]])
-    y_pred = model.predict(df)[0][0]
-    result = np.exp(y_pred)
-    return np.round(result, 2)
+        df = pd.DataFrame(columns=["property_type", "room_type", "accommodates", "bathrooms", "bedrooms", "beds", "city"],
+        data=[[property_type, room_type, accommodates, bathrooms, bedrooms, beds, city]])
+        y_pred = model.predict(df)[0][0]
+        result = np.exp(y_pred)
+        return np.round(result, 2)
 
-# @router.get('/prediction', response_class=HTMLResponse)
+
 @router.post('/prediction')
 def echo(
     request: Request, 
@@ -77,15 +84,3 @@ def echo(
 @router.get('/prediction')
 def display_index(request: Request):
     return templates.TemplateResponse('prediction.html', {"request": request})
-
-
-# @router.post('/prediction')
-# async def predict(property_type, room_type, accommodates, bathrooms, bedrooms, beds, city):
-#     df = pd.DataFrame(columns=["property_type", "room_type", "accommodates", "bathrooms", "bedrooms", "beds", "city"],
-#     data=[[property_type, room_type, accommodates, bathrooms, bedrooms, beds, city]])
-#     y_pred = model.predict(df)[0][0]
-#     result = np.exp(y_pred)
-#     return np.round(result, 2)
-
-# def display_index(request: Request, prediction=predict("Apartment", "Private room", 5, 2, 3, 3, "Austin")):
-#     return templates.TemplateResponse('prediction.html', {"request": request, "prediction": prediction})
