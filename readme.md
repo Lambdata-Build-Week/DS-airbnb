@@ -8,6 +8,7 @@
 ![Github stars](https://img.shields.io/github/stars/Build-Week-ft-airbnb-2/DS?style=social)
 ![Github follow](https://img.shields.io/github/followers/Build-Week-ft-airbnb-2?style=social)
 
+
 AirBnB Price Recommender is an `<APP>` that allows `<AirBnb host>` to quickly get `<Best Listing Price>` without too much effort and hassle.
 
 [AirBnb Recommneder Website](https://airbnb-ds-predict.herokuapp.com/)
