@@ -16,14 +16,10 @@ import numpy as np
 router = APIRouter()
 
 # Instantiate templates
-templates = Jinja2Templates(directory="app/frontend/templates/")
+templates = Jinja2Templates(directory="app/templates/")
 
-<<<<<<< HEAD:app/ml/ml.py
+
 model = joblib.load("app/ml/model.joblib")
-=======
-# Instatiate the predictive model
-model = joblib.load("app/ml_viz/model.joblib")
->>>>>>> main:app/ml_viz/ml.py
 
 
 # Setup the prediction process (how the data will be passed to the model)

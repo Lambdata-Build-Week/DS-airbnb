@@ -18,12 +18,12 @@ app = FastAPI(
     docs_url='/docs'
 )
 # Instantiate templates path
-templates = Jinja2Templates(directory="app/frontend/templates/")
+templates = Jinja2Templates(directory="app/templates/")
 
 
 @app.get('/', response_class=HTMLResponse)
 def display_index(request: Request):
-    """Displays index.html from frontend/templates when user loads root URL"""
+    """Displays index.html from templates when user loads root URL"""
     return templates.TemplateResponse('index.html', {"request": request})
 
 @app.get('/about')
@@ -33,11 +33,11 @@ def display_about(request: Request):
 
 # Mounts static files to specific routes for easier reference
 app.mount("/assets",
-            StaticFiles(directory="app/frontend/templates/assets"),
+            StaticFiles(directory="app/templates/assets"),
             name="assets"
             )
 app.mount("/images",
-            StaticFiles(directory="app/frontend/templates/images"),
+            StaticFiles(directory="app/templates/images"),
             name="images"
             )
 app.mount("/model.joblib",
