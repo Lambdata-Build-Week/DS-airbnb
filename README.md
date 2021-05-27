@@ -1,4 +1,4 @@
-# AIRBNB RECOMMENDER - A tool that recommend listing price
+# AIRBNB RECOMMENDER - A tool that recommends listing price
 
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Build-Week-ft-airbnb-2/DS)
@@ -14,7 +14,7 @@ AirBnB Price Recommender is an `<APP>` that allows `<AirBnb host>` to quickly ge
 [AirBnb Recommneder Website](https://airbnb-ds-predict.herokuapp.com/)
 
 [Write about the project] 
-This web app is built on Fast API.... This app using Mahcine Learning to give prediction ....
+This web app is built on Fast API.... This app uses Mahcine Learning to give a prediction ....
 
 ## Duplicate the project
 You can clone this project and try yourself.
