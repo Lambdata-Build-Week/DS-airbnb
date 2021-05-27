@@ -14,7 +14,7 @@ router = APIRouter()
 
 templates = Jinja2Templates(directory="app/frontend/templates/")
 
-model = joblib.load("app/ml_viz/model.joblib")
+model = joblib.load("app/ml/model.joblib")
 
 
 # class Dict(BaseModel):
