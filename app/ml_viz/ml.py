@@ -17,12 +17,19 @@ templates = Jinja2Templates(directory="app/frontend/templates/")
 model = joblib.load("app/ml_viz/model.joblib")
 
 
-# class Item(BaseModel):
+# class Dict(BaseModel):
 #     """Use this data model to parse the request body JSON."""
 
-#     x1: float = Field(..., example=3.14)
-#     x2: int = Field(..., example=-42)
-#     x3: str = Field(..., example='banjo')
+#     # x1: float = Field(..., example=3.14)
+#     # x2: int = Field(..., example=-42)
+#     # x3: str = Field(..., example='banjo')
+#     city: str=Form(...),
+#     beds: int=Form(...),
+#     bedrooms: int=Form(...),
+#     bathrooms: int=Form(...),
+#     accommodates: int=Form(...),
+#     property_type: str=Form(...),
+#     room_type: str=Form(...)
 
 #     def to_df(self):
 #         """Convert pydantic object to pandas dataframe with 1 row."""
@@ -57,7 +64,15 @@ def echo(
     """Gets the input data from predict.html (with respective dtypes
     included) and returns them in JSON format."""
     prediction = predict(property_type, room_type, accommodates, bathrooms, bedrooms, beds, city)
-    return templates.TemplateResponse('prediction.html', {"request": request, "prediction": prediction,"property_type": property_type, "room_type": room_type, "accommodates": accommodates, "bathrooms": bathrooms, "bedrooms": bedrooms, "beds": beds, "city": city})
+    return templates.TemplateResponse('prediction.html', {"request": request, 
+                                                            "prediction": prediction,
+                                                            "property_type": f'Property type: {property_type}', 
+                                                            "room_type": f'Room type: {room_type}', 
+                                                            "accommodates": f'Accommodate: {accommodates}', 
+                                                            "bathrooms": f'Bathroom: {bathrooms}', 
+                                                            "bedrooms": f'Bedroom: {bedrooms}', 
+                                                            "beds": f'Bed: {beds}', 
+                                                            "city": f'City: {city}'})
 
 @router.get('/prediction')
 def display_index(request: Request):
