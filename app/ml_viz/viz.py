@@ -1,10 +1,18 @@
 """Data visualization functions"""
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Request, HTTPException
+from fastapi.templating import Jinja2Templates
 import pandas as pd
 import plotly.express as px
 
 router = APIRouter()
+
+templates = Jinja2Templates(directory="app/frontend/templates/")
+
+
+@router.get('/visualizations')
+def display_index(request: Request):
+    return templates.TemplateResponse('graph.html', {"request": request})
 
 
 @router.get('/viz/{statecode}')

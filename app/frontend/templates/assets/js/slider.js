@@ -21,7 +21,7 @@ slider3.oninput = function() {
     output3.innerHTML = this.value;
 }
 
-var slider4 = document.getElementById("accomodates");
+var slider4 = document.getElementById("accommodates");
 var output4 = document.getElementById("display4");
 output4.innerHTML = slider4.value;
 slider4.oninput = function() {

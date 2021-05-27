@@ -67,34 +67,33 @@
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of beds</label>
-                                                    <!-- <input type="text" name="number_bed" id="number_bed" value="" placeholder="Number of beds" /> -->
+                                                    <!-- <input type="text" name="beds" id="beds" value="" placeholder="Number of beds" /> -->
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="19" value="1" class="slider" id="beds">
+                                                        <input type="range" min="1" max="19" value="1" class="slider" name="beds" id="beds">
                                                         <p>Beds: <span id="display1"></span></p>
                                                       </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bedrooms</label>
-                                                    <!-- <input type="text" name="number_bedroom" id="number_bedroom" value="" placeholder="Number of bedrooms" /> -->
+                                                    <!-- <input type="text" name="bedrooms" id="bedrooms" value="" placeholder="Number of bedrooms" /> -->
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="9" value="1" class="slider" id="bedrooms">
+                                                        <input type="range" min="1" max="9" value="1" class="slider" name="bedrooms" id="bedrooms">
                                                         <p>Bedrooms: <span id="display2"></span></p>
                                                       </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bathrooms</label>
-                                                    <!-- <input type="text" name="number_bathrooms" id="number_bathrooms" value="" placeholder="Number of bathrooms" /> -->
+                                                    <!-- <input type="text" name="bathrooms" id="bathrooms" value="" placeholder="Number of bathrooms" /> -->
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="9" value="1" class="slider" id="bathrooms">
+                                                        <input type="range" min="1" max="9" value="1" class="slider" name="bathrooms" id="bathrooms">
                                                         <p>Bathrooms: <span id="display3"></span></p>
                                                       </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
-                                                    <label for="message">Accomodates</label>
-                                                    <!-- <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of persons" / -->
+                                                    <label for="message">Accommodates</label>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="19" value="1" class="slider" id="accomodates">
-                                                        <p>Accomodates: <span id="display4"></span></p>
+                                                        <input type="range" min="1" max="19" value="1" class="slider" name="accommodates" id="accommodates">
+                                                        <p>Accommodates: <span id="display4"></span></p>
                                                       </div>
                                                 </div>
                                                 <div class="col-12">
@@ -127,7 +126,7 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="message">Room type</label>
-                                                    <select name="city" id="city">
+                                                    <select name="room_type" id="room_type">
                                                         <option value="">- Room type -</option>
                                                         <option>Entire home/apt</option>
                                                         <option>Private room</option>
@@ -136,10 +135,23 @@
                                                     </select>
                                                 </div>
                                             </div> 
+                                            <div class="col-12">
+                                                <ul class="actions">
+                                                    <li><input type="submit" value="Get Optimal Price" class="primary" /></li>
+                                                </ul>
+                                            </div>
                                         </form>
                                     </div>
                                     <div class="col-6 col-12-medium">
-                                        <h3>YOUR RECOMMENDATED LISTING PRICE</h3>
+                                        <h3>YOUR RECOMMENDED LISTING PRICE</h3>
+                                        <h2>{{ prediction }}</h2>
+                                        <h4>{{ city }}</h4>
+                                        <h4>Bed {{ beds }}</h4>
+                                        <h4>Bedroom {{ bedrooms }}</h4>
+                                        <h4>Bathroom {{ bathrooms }}</h4>
+                                        <h4>Accomodate {{ accommodates }}</h4>
+                                        <h4>{{ property_type }}</h4>
+                                        <h4>{{ room_type }}</h4>
                                     </div>
                                 </div>
      
