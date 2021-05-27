@@ -48,6 +48,7 @@
 					<div id="main" class="alt">
                         <section id="one">
                             <div class="inner">
+
                                 <div class="row gtr-200">
                                     <div class="col-6 col-12-medium"> 
                                         <form action="/prediction" method="POST">                                                                
@@ -66,19 +67,34 @@
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of beds</label>
-                                                    <input type="text" name="number_bed" id="number_bed" value="" placeholder="Number of beds" />
+                                                    <!-- <input type="text" name="beds" id="beds" value="" placeholder="Number of beds" /> -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="19" value="1" class="slider" name="beds" id="beds">
+                                                        <p>Beds: <span id="display1"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bedrooms</label>
-                                                    <input type="text" name="number_bedroom" id="number_bedroom" value="" placeholder="Number of bedrooms" />
+                                                    <!-- <input type="text" name="bedrooms" id="bedrooms" value="" placeholder="Number of bedrooms" /> -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="9" value="1" class="slider" name="bedrooms" id="bedrooms">
+                                                        <p>Bedrooms: <span id="display2"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bathrooms</label>
-                                                    <input type="text" name="number_bathrooms" id="number_bathrooms" value="" placeholder="Number of bathrooms" />
+                                                    <!-- <input type="text" name="bathrooms" id="bathrooms" value="" placeholder="Number of bathrooms" /> -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="9" value="1" class="slider" name="bathrooms" id="bathrooms">
+                                                        <p>Bathrooms: <span id="display3"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
-                                                    <label for="message">Accomodates</label>
-                                                    <input type="text" name="accomodates" id="accomodates" value="" placeholder="Number of persons" />
+                                                    <label for="message">Accommodates</label>
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="19" value="1" class="slider" name="accommodates" id="accommodates">
+                                                        <p>Accommodates: <span id="display4"></span></p>
+                                                      </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="message">Property type</label>
@@ -87,7 +103,7 @@
                                                         <option value="Apartment">Apartment</option>
                                                         <option value="Aparthotel">Aparthotel</option>
                                                         <option value="Bed and breakfast">Bed and breakfast</option>
-                                                        <option value="Botique hotel">Botique hotel</option>
+                                                        <option value="Boutique hotel">Boutique hotel</option>
                                                         <option value="Boat">Boat</option>
                                                         <option value="Bungalow">Bungalow</option>
                                                         <option value="Cabin">Cabin</option>
@@ -110,7 +126,7 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="message">Room type</label>
-                                                    <select name="city" id="city">
+                                                    <select name="room_type" id="room_type">
                                                         <option value="">- Room type -</option>
                                                         <option>Entire home/apt</option>
                                                         <option>Private room</option>
@@ -119,10 +135,23 @@
                                                     </select>
                                                 </div>
                                             </div> 
+                                            <div class="col-12">
+                                                <ul class="actions">
+                                                    <li><input type="submit" value="Get Optimal Price" class="primary" /></li>
+                                                </ul>
+                                            </div>
                                         </form>
                                     </div>
                                     <div class="col-6 col-12-medium">
-                                        <h3>YOUR RECOMMENDATED LISTING PRICE</h3>
+                                        <h3>YOUR RECOMMENDED LISTING PRICE</h3>
+                                        <h2>{{ prediction }}</h2>
+                                        <h4>{{ city }}</h4>
+                                        <h4>{{ beds }}</h4>
+                                        <h4>{{ bedrooms }}</h4>
+                                        <h4>{{ bathrooms }}</h4>
+                                        <h4>{{ accommodates }}</h4>
+                                        <h4>{{ property_type }}</h4>
+                                        <h4>{{ room_type }}</h4>
                                     </div>
                                 </div>
      
@@ -138,5 +167,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script src="assets/js/slider.js"></script>
 
     </body>

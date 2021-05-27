@@ -21,6 +21,9 @@ psycopg2-binary = "*"
 jinja2 = "*"
 python-multipart = "*"
 aiofiles = "*"
+joblib = "*"
+scikit-learn = "*"
+category-encoders = "*"
 
 [requires]
 python_version = "3"

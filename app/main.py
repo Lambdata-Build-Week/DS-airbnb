@@ -9,7 +9,11 @@ import uvicorn
 # For routing between front end, back end, and databse
 from app.database import db
 from app.ml_viz import ml, viz
-from app.frontend import routes
+# from app.frontend import routes
+
+from fastapi import Request, Form
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
 
 # Instantiate fastAPI with appropriate descriptors
@@ -19,6 +23,11 @@ app = FastAPI(
     version="1.0",
     docs_url='/docs'
 )
+templates = Jinja2Templates(directory="app/frontend/templates/")
+
+@app.get('/', response_class=HTMLResponse)
+def display_index(request: Request):
+    return templates.TemplateResponse('index.html', {"request": request})
 
 
 # Create access to static files on the page
@@ -32,9 +41,13 @@ app.mount("/images",
           name="images"
           )
 
-
+app.mount("/model.joblib",
+          StaticFiles(directory="app/ml_viz/"),
+          name="model.joblib"
+          )
+          
 # Connect to the routing utilized in the other files of the app
-app.include_router(routes.router, tags=['Frontend'])  # for routing user inputs
+# app.include_router(routes.router, tags=['Frontend'])  # for routing user inputs
 app.include_router(db.router, tags=['Database'])  # interactions with database
 app.include_router(ml.router, tags=['Machine Learning'])  # predictive model
 app.include_router(viz.router, tags=['Visualization'])  # interactive content
