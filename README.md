@@ -20,7 +20,7 @@ You can clone this project and try yourself.
 
 Clone the repo
 ```
-git clone https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO-NAME.git
+git clone https://github.com/Build-Week-ft-airbnb-2/DS.git
 
 cd YOUR-REPO-NAME
 ```
