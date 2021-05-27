@@ -1,6 +1,5 @@
 # AIRBNB RECOMMENDER - A tool that recommends listing price
 
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/Build-Week-ft-airbnb-2/DS)
 ![GitHub contributors](https://img.shields.io/github/contributors/Build-Week-ft-airbnb-2/DS)
 ![GitHub license](https://img.shields.io/github/license/Build-Week-ft-airbnb-2/DS)
@@ -8,13 +7,12 @@
 ![Github stars](https://img.shields.io/github/stars/Build-Week-ft-airbnb-2/DS?style=social)
 ![Github follow](https://img.shields.io/github/followers/Build-Week-ft-airbnb-2?style=social)
 
-
 AirBnB Price Recommender is an `<APP>` that allows `<AirBnb host>` to quickly get `<Best Listing Price>` without too much effort and hassle.
 
 [AirBnb Recommneder Website](https://airbnb-ds-predict.herokuapp.com/)
 
-[Write about the project] 
-This web app is built on Fast API.... This app uses Mahcine Learning to give a prediction ....
+This web app is built on Fast API and uses Mahcine Learning to give a prediction on the price of an Airbnb listing.
+
 
 ## Duplicate the project
 You can clone this project and try yourself.
@@ -45,7 +43,9 @@ Go to `localhost:8000` in your browser.
 
 ![image](https://user-images.githubusercontent.com/7278219/87965040-c18ba300-ca80-11ea-894f-d51a69d52f8a.png)
 
+
 Or Docker to rebuild this project using Dockerfile 
+
 
 ### Docker/Heroku steps:
 ```
@@ -58,31 +58,8 @@ heroku container:release web -a <Name of your heroku app>
 heroku container:release worker -a <Name of your heroku app>
 ```
 
-# Foobar
-
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
-
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
 
 ## Contributing to Airbnb Recommender
-<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
 To contribute to Airbnb Recommender, follow these steps:
 
 1. Fork this repository.
@@ -93,6 +70,7 @@ To contribute to Airbnb Recommender, follow these steps:
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+
 ## Contributors
 
 Thanks to the following people who have contributed to this project:
@@ -102,6 +80,7 @@ Thanks to the following people who have contributed to this project:
 * [@Minh Nguyen](https://github.com/minh14496) :high_brightness:
 * [@Jack Stanley](https://github.com/Jack4589) ⌨
 * [@Dennis Smith](https://github.com/domoreburpees) 😙
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
