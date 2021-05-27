@@ -26,23 +26,9 @@
 								<li><a href="/visualizations" class="button">Graph</a></li>
                                 <li></li>
 							</ul>
-							<!-- <a href="#menu">Menu</a> -->
                             
 						</nav>
 					</header>
-
-				<!-- Menu -->
-					<!-- <nav id="menu">
-						<ul class="links">
-                            <li><a href="/">Home</a></li>
-							<li><a href="/prediction">Prediction</a></li>
-							<li><a href="/graph">Graph</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav> -->
                 
                 <!-- Main -->
 					<div id="main" class="alt">
@@ -56,7 +42,7 @@
                                                 <div class="col-12">
                                                     <label for="message">City</label>
                                                     <select name="city" id="city">
-                                                        <option value="">- City by name -</option>
+                                                        <!-- <option value="">- City by name -</option> -->
                                                         <option value="Austin">Austin</option>
                                                         <option value="Chicago">Chicago</option>
                                                         <option value="Columbus">Columbus</option>
@@ -67,7 +53,6 @@
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of beds</label>
-                                                    <!-- <input type="text" name="beds" id="beds" value="" placeholder="Number of beds" /> -->
                                                     <div class="slidecontainer">
                                                         <input type="range" min="1" max="19" value="1" class="slider" name="beds" id="beds">
                                                         <p>Beds: <span id="display1"></span></p>
@@ -75,7 +60,6 @@
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bedrooms</label>
-                                                    <!-- <input type="text" name="bedrooms" id="bedrooms" value="" placeholder="Number of bedrooms" /> -->
                                                     <div class="slidecontainer">
                                                         <input type="range" min="1" max="9" value="1" class="slider" name="bedrooms" id="bedrooms">
                                                         <p>Bedrooms: <span id="display2"></span></p>
@@ -83,7 +67,6 @@
                                                 </div>
                                                 <div class="col-6 col-12-xsmall">
                                                     <label for="message">Number of bathrooms</label>
-                                                    <!-- <input type="text" name="bathrooms" id="bathrooms" value="" placeholder="Number of bathrooms" /> -->
                                                     <div class="slidecontainer">
                                                         <input type="range" min="1" max="9" value="1" class="slider" name="bathrooms" id="bathrooms">
                                                         <p>Bathrooms: <span id="display3"></span></p>
@@ -99,7 +82,7 @@
                                                 <div class="col-12">
                                                     <label for="message">Property type</label>
                                                     <select name="property_type" id="property_type">
-                                                        <option value="">- Property Type -</option>
+                                                        <!-- <option value="">- Property Type -</option> -->
                                                         <option value="Apartment">Apartment</option>
                                                         <option value="Aparthotel">Aparthotel</option>
                                                         <option value="Bed and breakfast">Bed and breakfast</option>
@@ -119,7 +102,7 @@
                                                         <option value="Resort">Resort</option>                                                        
                                                         <option value="Serviced apartment">Serviced apartment</option>
                                                         <option value="Tiny house">Tiny house</option>
-                                                        <option value="Townhouse1">Townhouse</option>   
+                                                        <option value="Townhouse">Townhouse</option>   
                                                         <option value="Villa">Villa</option>
                                                         <option value="Other">Other</option>
                                                     </select>
@@ -127,19 +110,20 @@
                                                 <div class="col-12">
                                                     <label for="message">Room type</label>
                                                     <select name="room_type" id="room_type">
-                                                        <option value="">- Room type -</option>
+                                                        <!-- <option value="">- Room type -</option> -->
                                                         <option>Entire home/apt</option>
                                                         <option>Private room</option>
                                                         <option>Shared room</option>
                                                         <option>Hotel room</option>
                                                     </select>
                                                 </div>
+                                                <div class="col-12">
+                                                    <ul class="actions">
+                                                        <li><input type="submit" value="Get Optimal Price" class="primary" /></li>
+                                                    </ul>
+                                                </div>
                                             </div> 
-                                            <div class="col-12">
-                                                <ul class="actions">
-                                                    <li><input type="submit" value="Get Optimal Price" class="primary" /></li>
-                                                </ul>
-                                            </div>
+
                                         </form>
                                     </div>
                                     <div class="col-6 col-12-medium">
@@ -157,7 +141,18 @@
      
                             </div>  
                         </section>     
-                    </div>              
+                    </div>       
+                    <!-- Footer -->
+                    <footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/Build-Week-ft-airbnb-2/DS" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Ft-Airbnb-2 May 2021</li><li>Developed by: Brody Osterbuhr, Ryan Fikejs, Minh Nguyen, Jack Stanley, Dennis Smith</li>
+							</ul>
+						</div>
+					</footer>     
             </div>
         <!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

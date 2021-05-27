@@ -24,13 +24,12 @@ model = joblib.load("app/ml_viz/model.joblib")
 
 # Setup the prediction process (how the data will be passed to the model)
 def predict(
-    property_type, room_type, accommodates, bathrooms, bedrooms, beds, city):
+    property_type, room_type, accommodates, bathrooms, bedrooms, beds, city
+        ):
     """Predict the best value for the Airbnb host's property based on
     specific features found in historical data.
-
     Parameters are the selected features of most importance (based on
     EDA and model testing).
-
     Returns a result in dollar amount.
     """
 
@@ -73,15 +72,13 @@ def echo(
     accommodates: int=Form(...),
     property_type: str=Form(...),
     room_type: str=Form(...)
-    ):
+        ):
     """Gets the input data from predict.html (with respective dtypes
     included) and passes them into the predict function (used as a
     helper function).
-
     Parameters are the request (cleverly utilized by Minh Nuyen to
     pass into the response template) as well as values for the features
     necessary for the prediction, collested from the HTML form.
-
     Returns an HTML template supplied through Jinja which displays the
     recommended price per night as well as the selections made by the
     user (Airbnb host) to make the reccomendation.
