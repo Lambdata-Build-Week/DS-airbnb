@@ -12,7 +12,9 @@
 AirBnB Price Recommender is an `<APP>` that allows an `<AirBnb host>` to quickly get a `<Best Listing Price>` with minimal effort.
 
 [AirBnb Recommender Website](https://airbnb-ds-predict.herokuapp.com/)
+
 [Product Vision Document](https://www.notion.so/Product-Vision-Document-a52320ed951a4682aed8bb12f77a1778)
+
 This web app is built on Fast API. The app uses Machine Learning to generate a prediction.
 
 ## Duplicate the project
