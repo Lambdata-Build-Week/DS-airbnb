@@ -23,9 +23,14 @@ model = joblib.load("app/ml/model.joblib")
 
 
 # Setup the prediction process (how the data will be passed to the model)
-def predict(
-    property_type, room_type, accommodates, bathrooms, bedrooms, beds, city
-        ):
+def predict(property_type,
+            room_type,
+            accommodates,
+            bathrooms,
+            bedrooms,
+            beds,
+            city
+            ):
     """Predict the best value for the Airbnb host's property based on
     specific features found in historical data.
     Parameters are the selected features of most importance (based on
@@ -97,10 +102,10 @@ def echo(
     return templates.TemplateResponse('prediction.html',
                                       {"request": request,
                                        "prediction": prediction,
-                                       "property_type": \
+                                       "property_type":
                                        f'Property type: {property_type}',
                                        "room_type": f'Room type: {room_type}',
-                                       "accommodates": \
+                                       "accommodates":
                                        f'Accommodates: {accommodates}',
                                        "bathrooms": f'Bathrooms: {bathrooms}',
                                        "bedrooms": f'Bedrooms: {bedrooms}',
