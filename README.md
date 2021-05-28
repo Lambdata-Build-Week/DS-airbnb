@@ -11,7 +11,7 @@
 
 AirBnB Price Recommender is an `<APP>` that allows an `<AirBnb host>` to quickly get a `<Best Listing Price>` with minimal effort.
 
-[AirBnb Recommneder Website](https://airbnb-ds-predict.herokuapp.com/)
+[AirBnb Recommender Website](https://airbnb-ds-predict.herokuapp.com/)
 
 This web app is built on Fast API. The app uses Machine Learning to generate a prediction.
 
@@ -57,27 +57,6 @@ heroku container:release web -a <Name of your heroku app>
 heroku container:release worker -a <Name of your heroku app>
 ```
 
-# Foobar
-
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
-
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
 
 
 ## Contributing to Airbnb Recommender
