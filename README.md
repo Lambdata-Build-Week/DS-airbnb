@@ -77,7 +77,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 
 Thanks to the following people who have contributed to this project:
 
-* [@Brody Bosterbuhr](https://github.com/BOsterbuhr) :beers:
+* [@Brody Osterbuhr](https://github.com/BOsterbuhr) :beers:
 * [@Ryan Fikejs](https://github.com/RyanFikejs) :baby_bottle:
 * [@Minh Nguyen](https://github.com/minh14496) :high_brightness:
 * [@Jack Stanley](https://github.com/Jack4589) ⌨
