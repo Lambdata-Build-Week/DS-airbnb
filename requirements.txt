@@ -8,7 +8,7 @@ httptools==0.1.2
 Jinja2==3.0.1
 joblib==1.0.1
 MarkupSafe==2.0.1
-numpy==1.20.3
+numpy==1.22.0
 pandas==1.2.4
 patsy==0.5.1
 plotly==4.14.3
